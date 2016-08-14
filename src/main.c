@@ -213,8 +213,9 @@ static void sync_tuple_changed_callback(const uint32_t key, const Tuple* new_tup
       text_layer_set_text(temp_layer, new_tuple->value->cstring);
       break;
 	case INVERT_COLOR_KEY:
-      invert = new_tuple->value->uint8 != 0;
-	  persist_write_bool(INVERT_COLOR_KEY, invert);
+      //invert = new_tuple->value->uint8 != 0;
+      invert=true;
+	    persist_write_bool(INVERT_COLOR_KEY, invert);
       set_invert_color(invert);
       break;
 	case HIDE_SEC_KEY:
@@ -404,6 +405,7 @@ static void init(void) {
   
   background_color  = GColorBlack;
   window_set_background_color(window, background_color);
+  
 	
  // resources
 	
@@ -490,7 +492,7 @@ static void init(void) {
   tick_timer_service_subscribe(SECOND_UNIT, handle_tick);
   bluetooth_connection_service_subscribe(bluetooth_connection_callback);
   battery_state_service_subscribe(&update_battery);
-
+  
   // draw first frame
   force_update();
 

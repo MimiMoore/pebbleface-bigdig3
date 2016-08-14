@@ -5,7 +5,7 @@ var options = JSON.parse(localStorage.getItem('options'));
 if (options === null) options = { "use_gps" : "true",
                                   "location" : "",
                                   "units" : "fahrenheit",
-                                  "invert_color" : "false",
+                                  "invert_color" : "true",
                                   "hidebatt" : "false",
                                   "hidedate" : "false",
                                   "hideweather" : "false",
