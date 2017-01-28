@@ -221,7 +221,8 @@ static void sync_tuple_changed_callback(const uint32_t key, const Tuple* new_tup
 	case HIDE_SEC_KEY:
       hidesec = new_tuple->value->uint8 != 0;
 	  persist_write_bool(HIDE_SEC_KEY, hidesec);	  
-	  hide_seconds_now(hidesec);
+	  //hide_seconds_now(hidesec);
+    hide_seconds_now(true);
       break; 
 	case HIDE_BATT_KEY:
 	  hide_batt = new_tuple->value->uint8 != 0;
